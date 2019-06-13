@@ -44,9 +44,11 @@
   "homepage": "https://github.com/mapbox/pbf",
   "dependencies": {
     "ieee754": "^1.1.12",
+    "minimist": "^1.2.0",
     "resolve-protobuf-schema": "^2.1.0"
   },
   "devDependencies": {
+    "@types/minimist": "^1.2.0",
     "benchmark": "^2.1.4",
     "browserify": "^16.2.3",
     "eslint": "^5.15.1",

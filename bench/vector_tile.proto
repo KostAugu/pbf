@@ -26,6 +26,16 @@ message Tile {
                 extensions 8 to max;
         }
 
+        message Envelope {
+                map<string, string> kv = 1;
+                map<string, int32> kn = 2;
+                oneof value {
+                        int32 int = 3;
+                        float float = 4;
+                        string string = 5;
+                }
+        }
+            
         message Feature {
                 optional uint64 id = 1 [ default = 0 ];
 
@@ -68,6 +78,11 @@ message Tile {
                 //
                 // The original position is (0,0).
                 repeated uint32 geometry = 4 [ packed = true ];
+                repeated Deep deep = 5;
+
+                message Deep {
+                        optional uint32 deep_prop = 1;
+                }
         }
 
         message Layer {
@@ -95,6 +110,7 @@ message Tile {
         }
 
         repeated Layer layers = 3;
+        repeated Envelope whatever = 4;
 
         extensions 16 to 8191;
 }
